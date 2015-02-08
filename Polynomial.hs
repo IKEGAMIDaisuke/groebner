@@ -104,6 +104,8 @@ lm (P [])          = error "lm: zero polynomial"
 -- s-polynomial of a pair of polynomials.
 spoly :: (Eq r, Fractional r, Ord v, Show v, Ord (Monomial v o))
       => Polynomial r v o -> Polynomial r v o -> Polynomial r v o
+spoly (P []) _ = error "cannot compute spoly for zero"
+spoly _ (P []) = error "cannot compute spoly for zero"
 spoly f@(P ((T a m):_)) g@(P ((T b n):_)) = n' *^ f - m' *^ g
     where
       n' = T 1       (complement m n)
