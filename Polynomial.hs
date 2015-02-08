@@ -81,7 +81,7 @@ instance (Eq r, Num r, Ord v, Show v, Ord (Monomial v o))
     _ * P [] = P []
     P [] * _ = P []
 
-    negate (P ts) = P $ [ T (negate a) m | T a m <- ts ]
+    negate (P ts) = P [ T (negate a) m | T a m <- ts ]
     -- Inclusion of 'abs' and 'signum' into 'Num' was a stupid idea.
     abs _ = error "abs is undefined for polynomials"
     signum _ = error "signum is undefined for polynomials"
