@@ -28,7 +28,7 @@ groebner i = go i ps
       go s [] = s
       go s ((f, g):ps')
           | h == 0    = go s ps'
-          | otherwise = go (h:s) (ps' ++ [ (h, f) | f <- s, not (pc h f) ])
+          | otherwise = go (h:s) (ps' ++ [ (h, f') | f' <- s, not (pc h f') ])
           where
             h = nf (spoly f g) s
 
