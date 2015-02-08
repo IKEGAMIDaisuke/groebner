@@ -12,9 +12,9 @@ nf :: (Eq r, Fractional r, Ord v, Show v, Ord (Monomial v o))
    => Polynomial r v o -> [Polynomial r v o] -> Polynomial r v o
 nf f s = go f
     where
-      go h | h == 0      = 0
-           | []    <- s' = h
-           | (g:_) <- s' = go (spoly h g)
+      go h | h == 0    = 0
+           | null s'   = h
+           | otherwise = go (spoly h (head s'))
            where
              s' = [ g | g <- s, lm h `isDivisibleBy` lm g ]
 
