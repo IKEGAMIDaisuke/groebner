@@ -35,4 +35,6 @@ groebner i = go i ps
 -- Product criterion: if the lcm of the leading monomials of f and g
 -- is their product, then the s-poly of f and g reduces to 0 w.r.t.
 -- the set {f, g}.
+pc :: (Eq r, Fractional r, Ord v, Show v, Ord (Monomial v o))
+   => Polynomial r v o -> Polynomial r v o -> Bool
 pc f g = null (variables (lm f) `intersect` variables (lm g))
