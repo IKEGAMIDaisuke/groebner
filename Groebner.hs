@@ -3,7 +3,6 @@ module Groebner (nf, groebner) where
 
 import Monomial
 import Polynomial
-import Types
 
 import Data.List
 
