@@ -38,7 +38,7 @@ toList (M m) = [ p | p@(_, n) <- Map.toList m, n /= 0 ]
 
 -- Build a monomial from a list of variable-exponent pairs.
 fromList :: Ord v => [(v, Int)] -> Monomial v o
-fromList xs = M $ Map.fromList [ p | p@(x, n) <- xs, n /= 0 ]
+fromList xs = M $ Map.fromList [ p | p@(_, n) <- xs, n /= 0 ]
 
 -- Exponent of a variable in a monomial.
 exponent :: Ord v => v -> Monomial v o -> Int
