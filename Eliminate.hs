@@ -21,5 +21,5 @@ eliminate :: ( Eq r
              , Ord (Monomial v2 o2))
           => [Polynomial r (v1 :<: v2) (o1, o2)] -> [Polynomial r v1 o1]
 eliminate i = [ demote f | f <- groebner i
-                         , let (xa, yb) = uninterleave (lm f)
+                         , let (_, yb) = uninterleave (lm f)
                          , yb == mempty ]
