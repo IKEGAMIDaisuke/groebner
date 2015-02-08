@@ -27,7 +27,7 @@ data DegRevLex   -- Reverse degree lexicographic ordering
 -- (>) but in terms of 'compare', which in turn by default is
 -- defined in terms of (<=), leading to an infinite loop.
 lex' :: (Ord v, Show v) => Monomial v o -> Monomial v o -> [v] -> Bool
-lex' a b []     = True
+lex' _ _ []     = True
 lex' a b (x:xs) = exponent x a <= exponent x b
                   && (exponent x a /= exponent x b || lex' a b xs)
 
