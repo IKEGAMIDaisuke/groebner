@@ -26,7 +26,7 @@ groebner i = go i ps
     where
       ps = [ (f, g) | f <- i, g <- i, f /= g, not (pc f g) ]
       go s [] = s
-      go s ps@((f, g):ps')
+      go s ((f, g):ps')
           | h == 0    = go s ps'
           | otherwise = go (h:s) (ps' ++ [ (h, f) | f <- s, not (pc h f) ])
           where
