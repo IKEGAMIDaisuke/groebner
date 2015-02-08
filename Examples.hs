@@ -15,6 +15,7 @@ ideal = [x ^ 10 + x ^ 9 * y ^ 2, y ^ 8 - x ^ 2 * y ^ 7]
 basis :: Ord (Monomial (X :<: Y) o) => [Polynomial Rational (X :<: Y) o]
 basis = groebner ideal
 
+main :: IO ()
 main = putStr . unlines $
        [ "Ideal:"
        , ppr (ideal :: [Polynomial Rational (X :<: Y) Lex])
