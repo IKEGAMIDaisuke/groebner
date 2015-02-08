@@ -34,7 +34,7 @@ inject x = M $ Map.singleton x 1
 -- Convert a monomial to a list of variable-exponent pairs.  The
 -- variables with zero exponents are dropped.
 toList :: Ord v => Monomial v o -> [(v, Int)]
-toList (M m) = [ p | p@(x, n) <- Map.toList m, n /= 0 ]
+toList (M m) = [ p | p@(_, n) <- Map.toList m, n /= 0 ]
 
 -- Build a monomial from a list of variable-exponent pairs.
 fromList :: Ord v => [(v, Int)] -> Monomial v o
