@@ -63,7 +63,7 @@ defineSig var_name ty_name
 --     x = var X
 defineVal :: Name -> Name -> Q Dec
 defineVal var_name con_name
-    = valD (varP var_name) (normalB (appE (global 'var) (conE con_name))) []
+    = valD (varP var_name) (normalB (appE (varE 'var) (conE con_name))) []
 
 -- $(defineVariable "Foo") combines the above: it defines a data type
 -- with a unique constructor Foo, makes it an instance of Enumerable,
