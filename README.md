@@ -22,5 +22,5 @@ See the posts:
 
 ## Licence
 
-The licence of the original is unknown.
+The licence of the original seems unknown.
 Not decided a licence here anyhow.
