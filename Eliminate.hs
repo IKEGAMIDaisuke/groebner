@@ -3,7 +3,7 @@ module Eliminate (eliminate) where
 
 import Groebner
 import Monomial
-import Ordering
+import Ordering()
 import Polynomial
 import Types
 
