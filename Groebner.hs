@@ -1,4 +1,4 @@
-{-# LANGUAGE FlexibleContexts, PatternGuards #-}
+{-# LANGUAGE FlexibleContexts #-}
 module Groebner (nf, groebner) where
 
 import Monomial
